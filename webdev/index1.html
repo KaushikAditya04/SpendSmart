@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <nav>
+        <ul>
+          <li><a href="#page0">Home</a></li>
+          <li><a href="/contactus.html">contact</a></li>
+          <li><a href="#page3">about us</a></li>
+          <!-- <li><a href="/login.html">login</a></li> -->
+          <li id="login-item"><a href="/login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div id="page0" class="page">
+        <h1 id="heading0">$pend$mart</h1>
+        <p id="para">
+          "Student budgeting made simple, track expenses, save smart and own
+          your financial journey with ease"
+        </p>
+      </div>
+
+      <div id="page1" class="page">
+        <h1>Expense Tracker</h1>
+        <main>
+          <header>
+            <div>
+              <h5>Total Balance</h5>
+              <span id="balance">₹0.00</span>
+            </div>
+            <div>
+              <h5>Income</h5>
+              <span id="income">₹0.00</span>
+            </div>
+            <div>
+              <h5>Expense</h5>
+              <span id="expense">₹0.00</span>
+            </div>
+          </header>
+
+          <section>
+            <h3>Transactions</h3>
+            <ul id="transactionList"></ul>
+            <div id="status"></div>
+          </section>
+          <section id="budgetSection">
+            <h3>Expenditure Limit</h3>
+            <input
+              type="number"
+              id="budgetLimit"
+              placeholder="Enter budget limit"
+            />
+            <div id="notification" style="display: none; color: red">
+              Expenditure limit reached
+            </div>
+          </section>
+
+          <section>
+            <h3>Add Transaction</h3>
+
+            <form id="transactionForm">
+              <div>
+                <label for="type">
+                  <input type="checkbox" name="type" id="type" />
+                  <div class="option">
+                    <span>Expense</span>
+                    <span>Income</span>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <label for="name">Detail</label>
+                <input type="text" name="name" required />
+              </div>
+              <div>
+                <label for="amount">Amount</label>
+                <input
+                  type="number"
+                  name="amount"
+                  value="0"
+                  min="0.01"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <div>
+                <label for="date">Date</label>
+                <input type="date" name="date" required />
+              </div>
+              <button id="btns2" type="submit">Submit</button>
+            </form>
+          </section>
+        </main>
+      </div>
+
+      <div id="page2" class="page">
+        <h1 id="heading">MONEY DOESN'T HAVE TO BE MESSY</h1>
+        <h2 id="heading2">
+          Simplify your budgeting. Manage expenses seamlessly,<br />
+          make every ruppee count
+        </h2>
+      </div>
+
+      <div id="page3">
+        <img src="online finance.jpg" alt="" id="page3img" />
+
+        <div class="spendsmart-info">
+          <h1 id="heading3">How SpentSmart works</h1>
+          <span class="material-symbols-outlined"> computer </span>
+          <h2 id="heading3_1">Sign up for free</h2>
+          <p id="para3_1">
+            Start your journey with a free trial no credit card or commitment
+            required
+          </p>
+        </div>
+        <div>
+          <span class="material-symbols-outlined"> paid </span>
+          <h2 id="heading3_2">Make a money plan</h2>
+          <p id="para3_2">
+            Set saving targets and achieve your financial goals!!
+          </p>
+        </div>
+        <div>
+          <span class="material-symbols-outlined"> heart_plus </span>
+          <h2 id="heading3_3">Enjoy less stress</h2>
+          <p id="para3_3">
+            Start feeling confident, content, and securing your financial
+            life.You might even sleep better
+          </p>
+          <!-- <button type="button" id="btn3"> <a href="#page0"></a>Sign up for free</button> -->
+          <button type="button" id="btn3">
+            <a href="/login.html">Sign up for free</a>
+          </button>
+          <style>
+            #btn3 {
+              background-color: #2bd439;
+              color: black;
+            }
+          </style>
+        </div>
+      </div>
+      <style>
+        .footer {
+          background-color: #333;
+          color: #fff;
+          padding: 0px 0;
+          text-align: center;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+        }
+
+        .footer p {
+          margin: 0;
+        }
+
+        .footer a {
+          color: #fff;
+          text-decoration: none;
+        }
+        .footer-span {
+          color: aqua;
+        }
+      </style>
+      <footer class="footer">
+        <p>
+          &copy; 2024 <span class="footer-span">SpendSmart</span> Budget Tracker. All rights
+          reserved. | Designed by <a href="#">Echo-Chamber404</a>
+        </p>
+      </footer>
+
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
