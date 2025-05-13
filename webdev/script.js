@@ -1,3 +1,27 @@
+const themeToggleBtn = document.getElementById('themeToggle');
+let isDarkMode = false;
+
+function toggleTheme() {
+  isDarkMode = !isDarkMode;
+  document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  themeToggleBtn.textContent = isDarkMode ? '🌜' : '🌞';
+  
+  // Save theme preference
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
+
+// Load saved theme preference
+window.addEventListener('load', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    isDarkMode = savedTheme === 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggleBtn.textContent = isDarkMode ? '🌜' : '🌞';
+  }
+});
+
+themeToggleBtn.addEventListener('click', toggleTheme);
+
 const transactions = [];
 
 gsap.from("#page0 #heading0", {
